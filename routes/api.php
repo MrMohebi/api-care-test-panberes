@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return DB::collection('users')->get();
-});
+//Route::get('/user', function (Request $request) {
+//    $link = new Link;
+//    $link->address = "s5444444155fff";
+//    $link->save();
+//    return Link::all();
+//});
