@@ -1,0 +1,10 @@
+type Query{
+    hi:String
+}
+
+
+# login
+extend type Query {
+    login(username: String!, password: String!): String!
+}
+
