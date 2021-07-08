@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->json("linksId");
             $table->json("subsetsId");
             $table->string("token");
+            $table->string("username");
+            $table->string("password");
             $table->timestamps();
         });
     }
