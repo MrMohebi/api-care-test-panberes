@@ -2,17 +2,31 @@ type Query{
     login(username: String!, password: String!): LoginData!
 }
 
+type Mutation{
+    createLink(
+        token:String!
+        firstname:String
+        lastname: String
+        age: Int
+        addressText: String
+        addressCoordinates: String
+        phone: String
+        gender: String
+        maritalStatus: String
+        isEditable: Boolean
+        lastEditAt: Int
+        from: Int
+        to: Int): Link!
+}
+
+
+type Link{
+    id:ID
+    code:String
+}
 
 type LoginData{
     token: String!
     firstname: String
     lastname: String
 }
-
-
-
-## login
-#extend type Query {
-#    login(username: String!, password: String!): String!
-#}
-
