@@ -10,7 +10,9 @@ class Login
      * @param  null  $_
      * @param  array<string, mixed>  $args
      */
-    public function __invoke($_, array $args):string{
+    public function __invoke($_, array $args):array{
+        $returnFields = ["token"=>"", "firstname"=>"", "lastname"=>""];
+
         $username = $args["username"];
         $password = $args["password"];
         $user =  User::where("username", $username)->first();
@@ -19,11 +21,12 @@ class Login
                 $token = self::randomStringLower(32);
                 $user->token = $token;
                 $user->save();
-                return $token;
+                $returnFields["token"] = $token;
+                return $returnFields;
             }
-            return "username is incorrect";
         }
-        return "username or password is incorrect";
+        $returnFields["token"] = "username or password is incorrect";
+        return $returnFields;
     }
     private static function randomStringLower(int $length = 10):string {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyz';

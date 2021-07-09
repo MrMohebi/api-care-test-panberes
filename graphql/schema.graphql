@@ -1,10 +1,18 @@
 type Query{
-    hi:String
+    login(username: String!, password: String!): LoginData!
 }
 
 
-# login
-extend type Query {
-    login(username: String!, password: String!): String!
+type LoginData{
+    token: String!
+    firstname: String
+    lastname: String
 }
+
+
+
+## login
+#extend type Query {
+#    login(username: String!, password: String!): String!
+#}
 
