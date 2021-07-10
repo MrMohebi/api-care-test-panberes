@@ -26,6 +26,11 @@ class CreateLink
         $link->creatorName = $user->firstname . " " . $user->lastname;
         $link->save();
 
+        $userCreatedLinks = $user->linksId ?? [];
+        array_push($userCreatedLinks, $link->id);
+        $user->linksId = $userCreatedLinks;
+        $user->save();
+
         return $link;
     }
 
