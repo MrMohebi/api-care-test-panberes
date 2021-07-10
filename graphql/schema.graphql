@@ -4,8 +4,27 @@ directive @userAuth(token: String) on FIELD_DEFINITION | ARGUMENT_DEFINITION | I
 type Query{
     login(username: String!, password: String!): LoginData!
     links(token:String!): [Link] @userAuth
+    user(token:String! @eq): User @first
 }
 
+type User{
+    id:ID
+    uid:Int
+    avatar:String
+    firstname:String
+    lastname:String
+    phone:String
+    email:String
+    rank:String
+    topLeader:String
+    topLeaderId:String
+    linksId:String
+    subsetsId:String
+    username:String
+    updated_at:String
+    created_at:String
+    deleted_at:String
+}
 
 type Mutation{
     createLink(
