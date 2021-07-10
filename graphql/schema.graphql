@@ -1,6 +1,11 @@
+directive @userAuth(token: String) on FIELD_DEFINITION | ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
+
+
 type Query{
     login(username: String!, password: String!): LoginData!
+    links(token:String!): [Link] @userAuth
 }
+
 
 type Mutation{
     createLink(
@@ -23,6 +28,21 @@ type Mutation{
 type Link{
     id:ID
     code:String
+    creatorId:String
+    creatorName:String
+#    testResult:TestResult
+    firstname:String
+    lastname: String
+    age: Int
+    addressText: String
+    addressCoordinates: String
+    phone: String
+    gender: String
+    maritalStatus: String
+    isEditable: Boolean
+    lastEditAt: Int
+    from: Int
+    to: Int
 }
 
 type LoginData{
