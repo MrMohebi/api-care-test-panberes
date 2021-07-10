@@ -28,6 +28,7 @@ class CreateLinksTable extends Migration
             $table->string("maritalStatus");
             $table->json("testResult");
             $table->boolean("isEditable");
+            $table->boolean("isChecked");
             $table->timestamp("lastEditAt");
             $table->timestamp("from");
             $table->timestamp("to");
