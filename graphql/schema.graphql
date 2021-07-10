@@ -7,6 +7,40 @@ type Query{
     user(token:String! @eq): User @first
 }
 
+
+type Mutation{
+    createLink(
+        token:String!
+        firstname:String
+        lastname: String
+        age: Int
+        addressText: String
+        addressCoordinates: String
+        phone: String
+        gender: String
+        maritalStatus: String
+        isEditable: Boolean
+        lastEditAt: Int
+        from: Int
+        to: Int
+    ): Link! @userAuth
+    changeUser(
+        token:String!
+        avatar:String
+        firstname:String
+        lastname:String
+        phone:String
+        email:String
+    ):User @userAuth
+    changeLink(
+        token: String!
+        id: String!
+        isChecked: Boolean
+        delete: Boolean
+    ): Link @userAuth
+}
+
+# --------------------- types -------------------------
 type User{
     id:ID
     uid:Int
@@ -25,32 +59,6 @@ type User{
     created_at:String
     deleted_at:String
 }
-
-type Mutation{
-    createLink(
-        token:String!
-        firstname:String
-        lastname: String
-        age: Int
-        addressText: String
-        addressCoordinates: String
-        phone: String
-        gender: String
-        maritalStatus: String
-        isEditable: Boolean
-        lastEditAt: Int
-        from: Int
-        to: Int): Link! @userAuth
-    changeUser(
-        token:String
-        avatar:String
-        firstname:String
-        lastname:String
-        phone:String
-        email:String
-    ):User @userAuth
-}
-
 
 type Link{
     id:ID
