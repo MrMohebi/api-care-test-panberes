@@ -41,7 +41,14 @@ type Mutation{
         lastEditAt: Int
         from: Int
         to: Int): Link! @userAuth
-
+    changeUser(
+        token:String
+        avatar:String
+        firstname:String
+        lastname:String
+        phone:String
+        email:String
+    ):User @userAuth
 }
 
 
