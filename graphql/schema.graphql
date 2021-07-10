@@ -67,9 +67,12 @@ type Link{
     gender: String
     maritalStatus: String
     isEditable: Boolean
+    isChecked:Boolean
     lastEditAt: Int
     from: Int
     to: Int
+    created_at: String
+    updated_at:String
 }
 
 type LoginData{
