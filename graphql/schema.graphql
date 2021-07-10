@@ -40,7 +40,8 @@ type Mutation{
         isEditable: Boolean
         lastEditAt: Int
         from: Int
-        to: Int): Link!
+        to: Int): Link! @userAuth
+
 }
 
 

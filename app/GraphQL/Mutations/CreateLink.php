@@ -13,12 +13,7 @@ class CreateLink
      * @param  array<string, mixed>  $args
      */
     public function __invoke($_, array $args):Link{
-        $user = User::where("token", $args["token"])->first();
-        if(!isset($user->id)){
-            $emptyLink = new Link;
-            $emptyLink->id = "token is not valid!";
-            return $emptyLink;
-        }
+        $user = User::where("token", $args["token"])->first() ?? new User;
         $link = Link::create($args);
         $link->code = self::randomString(5);
         $link->testResult = array();
