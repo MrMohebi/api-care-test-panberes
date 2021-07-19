@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->string("phone");
             $table->string("email");
             $table->string("rank");
-            $table->string("topLeader");
-            $table->string("topLeaderId");
+            $table->string("upLine");
+            $table->string("upLineId");
             $table->json("linksId");
             $table->json("subsetsId");
             $table->string("token");
