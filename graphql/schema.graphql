@@ -9,6 +9,11 @@ type Query{
 
 
 type Mutation{
+    createCustomerOrder(
+        token:String!
+        customerId:String!
+        items:String!
+    ):Order @userAuth
     createCustomer(
         token:String!
         firstname: String!
