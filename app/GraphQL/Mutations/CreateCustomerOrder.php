@@ -13,7 +13,7 @@ class CreateCustomerOrder{
     public function __invoke($_, array $args):Order{
         $customer = Customer::find($args["customerId"]);
         if(!isset($customer->id))
-            throw new Error("asdf");
+            throw new Error("customerId is not valid");
 
         $order = Order::create($args);
         $order->customerName = $customer->firstname. " " . $customer->lastname;
