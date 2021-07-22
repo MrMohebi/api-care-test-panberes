@@ -50,8 +50,8 @@ type User{
     phone:String
     email:String
     rank:String
-    topLeader:String
-    topLeaderId:String
+    upLine:String
+    upLineId:String
     linksId:String
     subsetsId:String
     username:String
