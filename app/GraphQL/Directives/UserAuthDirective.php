@@ -8,6 +8,7 @@ use Nuwave\Lighthouse\Schema\Directives\BaseDirective;
 use Nuwave\Lighthouse\Schema\Values\FieldValue;
 use Nuwave\Lighthouse\Support\Contracts\FieldMiddleware;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
+use GraphQL\Error\Error;
 use App\Models\User;
 
 class UserAuthDirective extends BaseDirective implements FieldMiddleware
@@ -34,7 +35,7 @@ class UserAuthDirective extends BaseDirective implements FieldMiddleware
             $result = $resolver($root, $args, $context, $resolveInfo);
 
             if(!isset(User::where("token",$args["token"])->first()->id))
-                $result = ["id"=>"token is not valid"];
+                throw new Error("Invalid Token");
 
             return $result;
         });
