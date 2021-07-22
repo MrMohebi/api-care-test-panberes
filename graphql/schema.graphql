@@ -9,6 +9,17 @@ type Query{
 
 
 type Mutation{
+    createCustomer(
+        token:String!
+        firstname: String!
+        lastname:String
+        age:Int
+        addressText:String
+        addressCoordinates:String
+        phone:String
+        gender:String
+        maritalStatus:String
+    ): Customer! @userAuth
     createLink(
         token:String!
         firstname:String
