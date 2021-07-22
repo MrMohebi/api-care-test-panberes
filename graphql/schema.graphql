@@ -41,6 +41,26 @@ type Mutation{
 }
 
 # --------------------- types -------------------------
+
+type Customer{
+    marketerId: ID!,
+    marketerName: String!
+    firstname: String,
+    lastname:String,
+    age:Int,
+    addressText:String,
+    addressCoordinates:String,
+    phone:String,
+    gender:String,
+    maritalStatus:String,
+    orders:[Order],
+    ordersId:String
+    updated_at:String
+    created_at:String
+    deleted_at:String
+}
+
+
 type User{
     id:ID
     uid:Int
