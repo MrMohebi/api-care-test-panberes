@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Link extends Model
 {
@@ -30,7 +29,7 @@ class Link extends Model
         "creatorName"
     ];
 
-    public function user(): BelongsTo{
+    public function user(){
         return $this->belongsTo(User::class);
     }
 }

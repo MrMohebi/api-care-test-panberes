@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Order extends Model
 {
@@ -19,7 +18,10 @@ class Order extends Model
         "items",
     ];
 
-    public function customer(): BelongsTo{
+    public function customer(){
         return $this->belongsTo(Customer::class);
+    }
+    public function orderItem(){
+        return $this->hasMany(OrderItem::class);
     }
 }
