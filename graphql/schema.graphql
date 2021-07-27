@@ -63,7 +63,17 @@ type Mutation{
 }
 
 # --------------------- types -------------------------
-
+type TestResult{
+    faceAndNeckSkin:String!
+    hairAndHeadSkin:String!
+    bodySkin:String!
+    faceAndNeckSkinType:String!
+    hairAndHeadSkinType:String!
+    bodySkinType:String!
+    activityTime:String!
+    useSupplementsInWeek:String!
+    other:String
+}
 
 
 
@@ -131,7 +141,7 @@ type Link{
     code:String
     creatorId:String
     creatorName:String
-#    testResult:TestResult
+    testResult:TestResult
     name:String
     age: Int
     addressText: String
