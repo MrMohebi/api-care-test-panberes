@@ -9,6 +9,17 @@ type Query{
 
 
 type Mutation{
+    testResult(
+        code:String!
+        name:String!
+        phone: String! @rules(apply: ["size:11"])
+        gender: String!
+        testResult:String!
+        age:Int
+        addressText: String
+        addressCoordinates: String
+        maritalStatus: String
+    ):String!
     createUser(
         introducerId:String!
         uid:String! @rules(apply: ["size:10"])

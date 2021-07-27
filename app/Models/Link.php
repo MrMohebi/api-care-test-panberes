@@ -25,7 +25,8 @@ class Link extends Model
         "from",
         "to",
         "creatorId",
-        "creatorName"
+        "creatorName",
+        "testResult",
     ];
 
     public function user(){
