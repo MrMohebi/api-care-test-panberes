@@ -9,6 +9,16 @@ type Query{
 
 
 type Mutation{
+    createUser(
+        introducerId:String!
+        uid:String! @rules(apply: ["size:10"])
+        firstname:String!
+        lastname:String!
+        phone:String! @rules(apply: ["size:11"])
+        email:String
+        username:String
+        password:String! @rules(apply: ["min:8"])
+    ):User
     createCustomerOrder(
         token:String!
         customerId:String!
@@ -109,6 +119,7 @@ type User{
     rank:String
     upLine:String
     upLineId:String
+    introducerId:String
     linksId:String
     subsetsId:String
     username:String

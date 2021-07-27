@@ -12,19 +12,20 @@ class User extends Model
     use SoftDeletes;
     protected $dates = ["created_at","updated_at",'deleted_at'];
     protected $fillable = [
-      "uid",
-      "avatar",
-      "firstname",
-      "lastname",
-      "phone",
-      "email",
-      "rank",
-      "topLeader",
-      "topLeaderId",
-      'linksId',
-      "subsetsId",
-      "token",
-      "username"
+        "uid",
+        "avatar",
+        "firstname",
+        "lastname",
+        "phone",
+        "email",
+        "rank",
+        "topLeader",
+        "topLeaderId",
+        "introducerId",
+        'linksId',
+        "subsetsId",
+        "token",
+        "username"
     ];
 
     public function links(){
