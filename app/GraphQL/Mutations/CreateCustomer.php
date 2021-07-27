@@ -10,7 +10,7 @@ class CreateCustomer{
         $user = User::where("token", $args["token"])->first() ?? new User;
         $customer = Customer::create($args);
         $customer->marketerId = $user->id;
-        $customer->marketerName = $user->firstname . " " . $user->lastname;
+        $customer->marketerName = $user->name;
         $customer->save();
         return $customer;
     }

@@ -18,7 +18,7 @@ class CreateLink
         $link->code = self::randomString(5);
         $link->testResult = array();
         $link->creatorId = $user->id;
-        $link->creatorName = $user->firstname . " " . $user->lastname;
+        $link->creatorName = $user->name;
         $link->save();
 
         $userCreatedLinks = $user->linksId ?? [];

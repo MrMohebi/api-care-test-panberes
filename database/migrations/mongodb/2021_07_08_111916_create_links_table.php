@@ -18,8 +18,7 @@ class CreateLinksTable extends Migration
             $table->string("code");
             $table->string("creatorId");
             $table->string("creatorName");
-            $table->string("firstname");
-            $table->string("lastname");
+            $table->string("name");
             $table->string("age");
             $table->string("addressText");
             $table->json("addressCoordinates");

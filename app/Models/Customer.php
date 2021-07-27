@@ -15,8 +15,7 @@ class Customer extends Model
     protected $fillable = [
         "marketerId",
         "marketerName",
-        "firstname",
-        "lastname",
+        "name",
         "age",
         "addressText",
         "addressCoordinates",

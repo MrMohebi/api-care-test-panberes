@@ -14,8 +14,7 @@ class User extends Model
     protected $fillable = [
         "uid",
         "avatar",
-        "firstname",
-        "lastname",
+        "name",
         "phone",
         "email",
         "rank",

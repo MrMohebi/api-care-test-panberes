@@ -17,8 +17,7 @@ class CreateCustomersTable extends Migration
             $table->id();
             $table->string("marketerId");
             $table->string("marketerName");
-            $table->string("firstname");
-            $table->string("lastname");
+            $table->string("name");
             $table->string("age");
             $table->string("addressText");
             $table->json("addressCoordinates");

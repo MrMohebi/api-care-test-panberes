@@ -17,8 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string("uid");
             $table->string("avatar");
-            $table->string("firstname");
-            $table->string("lastname");
+            $table->string("name");
             $table->string("phone");
             $table->string("email");
             $table->string("rank");

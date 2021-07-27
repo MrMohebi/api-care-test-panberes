@@ -17,7 +17,7 @@ class CreateCustomerOrder{
 
         $args["items"] = json_decode($args["items"], true);
         $order = Order::create($args);
-        $order->customerName = $customer->firstname. " " . $customer->lastname;
+        $order->customerName = $customer->name;
         $order->save();
         return $order;
     }

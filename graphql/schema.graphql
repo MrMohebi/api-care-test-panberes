@@ -12,8 +12,7 @@ type Mutation{
     createUser(
         introducerId:String!
         uid:String! @rules(apply: ["size:10"])
-        firstname:String!
-        lastname:String!
+        name:String!
         phone:String! @rules(apply: ["size:11"])
         email:String
         username:String
@@ -26,8 +25,7 @@ type Mutation{
     ):Order @userAuth
     createCustomer(
         token:String!
-        firstname: String!
-        lastname:String
+        name: String!
         age:Int
         addressText:String
         addressCoordinates:String
@@ -37,8 +35,7 @@ type Mutation{
     ): Customer! @userAuth
     createLink(
         token:String!
-        firstname:String
-        lastname: String
+        name:String
         age: Int
         addressText: String
         addressCoordinates: String
@@ -53,8 +50,7 @@ type Mutation{
     changeUser(
         token:String!
         avatar:String
-        firstname:String
-        lastname:String
+        name:String
         phone:String
         email:String
     ):User @userAuth
@@ -67,6 +63,10 @@ type Mutation{
 }
 
 # --------------------- types -------------------------
+
+
+
+
 type OrderItem{
     id:ID
     name:String
@@ -92,8 +92,7 @@ type Customer{
     id:ID
     marketerId: ID,
     marketerName: String
-    firstname: String
-    lastname:String
+    name: String
     age:Int
     addressText:String
     addressCoordinates:String
@@ -112,8 +111,7 @@ type User{
     id:ID
     uid:Int
     avatar:String
-    firstname:String
-    lastname:String
+    name:String
     phone:String
     email:String
     rank:String
@@ -134,8 +132,7 @@ type Link{
     creatorId:String
     creatorName:String
 #    testResult:TestResult
-    firstname:String
-    lastname: String
+    name:String
     age: Int
     addressText: String
     addressCoordinates: String
@@ -153,6 +150,5 @@ type Link{
 
 type LoginData{
     token: String!
-    firstname: String
-    lastname: String
+    name: String
 }
