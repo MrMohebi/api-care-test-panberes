@@ -3,18 +3,18 @@
 namespace App\GraphQL\Queries;
 
 use App\Models\User;
+use GraphQL\Error\Error;
 
 class Login
 {
     /**
-     * @param  null  $_
-     * @param  array<string, mixed>  $args
+     * @throws Error
      */
     public function __invoke($_, array $args):User{
         $username = $args["username"];
         $password = $args["password"];
         $user =  User::where("username", $username)->first();
-        if($user->password){
+        if(isset($user->password)){
             if(password_verify($password, $user->password)){
                 $token = self::randomStringLower(32);
                 $user->token = $token;
@@ -23,9 +23,7 @@ class Login
                 return $user;
             }
         }
-        $emptyUser = new User;
-        $emptyUser->token = "username or password is incorrect";
-        return $emptyUser;
+        throw new Error("username or password is incorrect");
     }
     private static function randomStringLower(int $length = 10):string {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
