@@ -12,8 +12,7 @@
         "jenssegers/mongodb": "^3.8",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "nuwave/lighthouse": "^5.15",
-      "ext-json": "*"
+        "nuwave/lighthouse": "^5.17"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
