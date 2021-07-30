@@ -18,13 +18,13 @@ class User extends Model
         "phone",
         "email",
         "rank",
-        "topLeader",
-        "topLeaderId",
+        "upLine",
+        "upLineId",
         "introducerId",
         'linksId',
         "subsetsId",
         "token",
-        "username"
+        "username",
     ];
 
     public function links(){

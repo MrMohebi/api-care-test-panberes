@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get('/t', function () {
+//    $x = \App\Models\User::where("username", "MrM");
+//    return response($x->first());
+//});
