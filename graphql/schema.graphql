@@ -5,6 +5,7 @@ type Query{
     login(username: String!, password: String!): LoginData!
     links(token:String!): [Link] @userAuth
     user(token:String! @eq): User @first
+    customers(token:String!): [Customer] @userAuth
 }
 
 
