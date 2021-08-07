@@ -136,6 +136,9 @@ type User{
     name:String
     phone:String
     email:String
+    birth:Int
+    gender:String
+    address:String
     rank:String
     upLine:String
     upLineId:String
