@@ -17,6 +17,7 @@ class Customer extends Model
         "marketerName",
         "name",
         "age",
+        "birth",
         "addressText",
         "addressCoordinates",
         "phone",

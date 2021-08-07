@@ -116,6 +116,7 @@ type Customer{
     marketerName: String
     name: String
     age:Int
+    birth:Int
     addressText:String
     addressCoordinates:String
     phone:String
