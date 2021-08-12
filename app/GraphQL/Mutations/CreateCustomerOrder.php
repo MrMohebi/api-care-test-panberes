@@ -19,6 +19,7 @@ class CreateCustomerOrder{
         $order = Order::create($args);
         $order->customerName = $customer->name;
         $order->save();
+        $customer->push("ordersId", $order->id);
         return $order;
     }
 }
