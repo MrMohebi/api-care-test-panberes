@@ -66,6 +66,8 @@ type Mutation{
         name:String
         phone:String
         email:String
+        password:String
+        oldPassword:String
     ):User @userAuth
     changeLink(
         token: String!
