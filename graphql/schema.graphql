@@ -4,7 +4,7 @@ directive @userAuth(token: String) on FIELD_DEFINITION | ARGUMENT_DEFINITION | I
 type Query{
     login(username: String!, password: String!): LoginData!
     links(token:String!): [Link] @userAuth
-    user(token:String! @eq): User @first
+    user(token:String!): User @userAuth
     customers(token:String!): [Customer] @userAuth
     customer(id:ID! token:String! ): Customer @userAuth
 }
@@ -78,6 +78,29 @@ type Mutation{
 }
 
 # --------------------- types -------------------------
+
+type Subset {
+    id:ID
+    uid:Int
+    avatar:String
+    name:String
+    phone:String
+    gender:String
+    rank:String
+    upLine:String
+    upLineId:String
+    linksId:String
+    subsetsId:String
+    subsets:[Subset]
+    username:String
+    updated_at:String
+    created_at:String
+    deleted_at:String
+}
+
+
+
+
 type TestResult{
     faceAndNeckSkin:String!
     hairAndHeadSkin:String!
@@ -149,6 +172,7 @@ type User{
     introducerId:String
     linksId:String
     subsetsId:String
+    subsets:[Subset]
     username:String
     updated_at:String
     created_at:String
