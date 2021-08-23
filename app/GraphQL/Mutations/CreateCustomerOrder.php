@@ -15,7 +15,7 @@ class CreateCustomerOrder{
         if(!isset($customer->id))
             throw new Error("customerId is not valid");
 
-        $args["items"] = json_decode($args["items"], true);
+//        $args["items"] = json_decode($args["items"], true);
         $order = Order::create($args);
         $order->customerName = $customer->name;
         $order->save();

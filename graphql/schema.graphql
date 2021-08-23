@@ -35,7 +35,7 @@ type Mutation{
     createCustomerOrder(
         token:String!
         customerId:String!
-        items:String!
+        items:[OrderItemInput!]!
     ):Order @userAuth
     createCustomer(
         token:String!
@@ -78,6 +78,16 @@ type Mutation{
     ): Link @userAuth
 }
 
+# --------------------- inputs -----------------------
+input OrderItemInput{
+    name:String!
+    price:Int
+    remindAt:Int
+    details:String
+    note:String
+}
+
+
 # --------------------- types -------------------------
 
 type Subset {
@@ -119,7 +129,7 @@ type TestResult{
 type OrderItem{
     id:ID
     name:String
-    price:String
+    price:Int
     remindAt:Int
     details:String
     note:String
