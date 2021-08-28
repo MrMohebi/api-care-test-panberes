@@ -92,7 +92,7 @@ input OrderItemInput{
 
 type Subset {
     id:ID
-    uid:Int
+    uid:String
     avatar:String
     name:String
     phone:String
@@ -169,7 +169,7 @@ type Customer{
 
 type User{
     id:ID
-    uid:Int
+    uid:String
     avatar:String
     name:String
     phone:String
