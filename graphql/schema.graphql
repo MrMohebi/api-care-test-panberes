@@ -182,7 +182,7 @@ type User{
     upLineId:String
     introducerId:String
     linksId:String
-    subsetsId:String
+    subsetsId:[String]
     subsets:[Subset]
     username:String
     updated_at:String
