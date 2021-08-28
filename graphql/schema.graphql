@@ -101,7 +101,7 @@ type Subset {
     upLine:String
     upLineId:String
     linksId:String
-    subsetsId:String
+    subsetsId:[String]
     subsets:[Subset]
     username:String
     updated_at:String
