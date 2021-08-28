@@ -28,7 +28,7 @@ class CreateUser{
         $user->password = $hashedPass;
         $user->save();
 
-        $introducer->subsetsId = array_merge(json_decode($introducer->subsetsId ?? "[]"), [$user->id]);
+        $introducer->subsetsId = array_merge($introducer->subsetsId ?? [], [$user->id]);
         $introducer->save();
         return $user;
     }
