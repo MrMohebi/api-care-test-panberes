@@ -110,8 +110,6 @@ type Subset {
 }
 
 
-
-
 type TestResult{
     faceAndNeckSkin:[String]!
     hairAndHeadSkin:[String]!
@@ -125,7 +123,6 @@ type TestResult{
 }
 
 
-
 type OrderItem{
     id:ID
     name:String
@@ -134,6 +131,20 @@ type OrderItem{
     details:String
     note:String
     created_at:String
+}
+
+
+type Tutorial{
+    id:ID
+    requirement:ID
+    name:String
+    description:String
+    logo:String
+    group:String
+    link:String
+    links:[String]
+    watchTimes:Int
+    length:Int
 }
 
 
@@ -146,6 +157,7 @@ type Order{
     created_at:String
     deleted_at:String
 }
+
 
 type Customer{
     id:ID
@@ -190,6 +202,7 @@ type User{
     deleted_at:String
 }
 
+
 type Link{
     id:ID
     code:String
@@ -211,6 +224,7 @@ type Link{
     created_at: String
     updated_at:String
 }
+
 
 type LoginData{
     token: String!
