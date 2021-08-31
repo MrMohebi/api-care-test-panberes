@@ -146,6 +146,7 @@ type Tutorial{
     links:[String]
     watchTimes:Int
     length:Int
+    deadline:Int
 }
 
 
@@ -195,9 +196,12 @@ type User{
     upLineId:String
     introducerId:String
     linksId:String
-    subsetsId:[String]
+    subsetsId:[ID]
     subsets:[Subset]
     username:String
+    watchedTutorialsId:[ID]
+    tutorialRemindAt:Int
+    tutorialRemindId:ID
     updated_at:String
     created_at:String
     deleted_at:String
@@ -207,7 +211,7 @@ type User{
 type Link{
     id:ID
     code:String
-    creatorId:String
+    creatorId:ID
     creatorName:String
     testResult:TestResult
     name:String
