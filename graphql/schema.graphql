@@ -113,9 +113,9 @@ type Subset {
 
 
 type TestResult{
-    faceAndNeckSkin:String!
-    hairAndHeadSkin:String!
-    bodySkin:String!
+    faceAndNeckSkin:[String]!
+    hairAndHeadSkin:[String]!
+    bodySkin:[String]!
     faceAndNeckSkinType:String!
     hairAndHeadSkinType:String!
     bodySkinType:String!
