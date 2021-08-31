@@ -23,6 +23,7 @@ class CreateTutorialsTable extends Migration
             $table->json("links");
             $table->integer("watchTimes");
             $table->integer("length");
+            $table->integer("deadline");
             $table->string("requirement");
             $table->timestamps();
         });
