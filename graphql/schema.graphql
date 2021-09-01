@@ -13,6 +13,10 @@ type Query{
 
 
 type Mutation{
+    addTutorialToWatched(
+        token: String!
+        tutorialId:ID!
+    ):User! @userAuth
     testResult(
         code:String!
         name:String!
