@@ -8,7 +8,7 @@ type Query{
     customers(token:String!): [Customer] @userAuth
     customer(id:ID! token:String! ): Customer @userAuth
     subsets(token:String! id:ID!):[Subset] @userAuth
-    tutorials:[Tutorial]
+    tutorials:[Tutorial] @all
 }
 
 
