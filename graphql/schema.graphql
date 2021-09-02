@@ -142,10 +142,12 @@ type OrderItem{
 type Tutorial{
     id:ID
     requirement:ID
+    order:Int
     name:String
     description:String
     logo:String
     group:String
+    groupOrder:Int
     link:String
     links:[String]
     watchTimes:Int
