@@ -12,7 +12,7 @@ class TestResult{
      * @throws Error
      */
     public function __invoke($_, array $args):string{
-        $args["testResult"] = json_decode($args["testResult"]);
+//        $args["testResult"] = json_decode($args["testResult"]);
         $codeArr = explode("_", $args["code"]);
         if(count($codeArr) > 1){
             $args["code"] = $codeArr[1];

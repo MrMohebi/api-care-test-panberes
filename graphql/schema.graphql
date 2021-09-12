@@ -22,7 +22,7 @@ type Mutation{
         name:String!
         phone: String! @rules(apply: ["size:11"])
         gender: String!
-        testResult:String!
+        testResult:TestResultInput!
         age:Int
         addressText: String
         addressCoordinates: String
@@ -90,6 +90,18 @@ input OrderItemInput{
     remindAt:Int
     details:String
     note:String
+}
+
+input TestResultInput{
+    faceAndNeckSkin:[String]!
+    hairAndHeadSkin:[String]!
+    bodySkin:[String]!
+    faceAndNeckSkinType:String!
+    hairAndHeadSkinType:String!
+    bodySkinType:String!
+    activityTime:String!
+    useSupplementsInWeek:String!
+    other:String
 }
 
 
