@@ -13,7 +13,7 @@ class Login
     public function __invoke($_, array $args):User{
         $username = $args["username"];
         $password = $args["password"];
-        $user =  User::where("username", $username)->first();
+        $user =  User::where("username", $username)->orWhere("phone", $username)->first();
         if(isset($user->password)){
             if(password_verify($password, $user->password)){
                 $token = self::randomStringLower(32);
